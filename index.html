@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/devicon@2.16.0/devicon.min.css" rel="stylesheet" integrity="sha512-BlFCHJWngPEHme4TwlEob6dPLfoNaQBTTISPwr4344nxR353w2vgGZ7GiSadbbeR20cJeeM0u1I2lAZuIZ1aOQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title>Portfolio</title>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navbar -->
+    <nav class="container-fluid bg-white bg-opacity-90 shadow-md p-4 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <div>
+                <h1 class="text-2xl font-bold text-gray-800">Debay</h1>
+            </div>
+
+            <!-- Navigation Links (default display on desktop, hidden on mobile) -->
+            <div class="hidden md:flex">
+                <ul class="flex gap-6 text-gray-600 font-medium">
+                    <li><a href="#home" class="hover:text-blue-500 transition">Home</a></li>
+                    <li><a href="#skills" class="hover:text-blue-500 transition">Skills</a></li>
+                    <li><a href="#about" class="hover:text-blue-500 transition">About</a></li>
+                    <li><a href="#projects" class="hover:text-blue-500 transition">Project</a></li>
+                    <li><a href="#contact" class="hover:text-blue-500 transition">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Hamburger Icon (visible on mobile) -->
+            <div class="md:hidden">
+                <button id="hamburger-btn" class="text-gray-800 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (hidden by default) -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white p-4">
+            <ul class="flex flex-col gap-4 text-gray-600 font-medium">
+                <li><a href="#home" class="hover:text-blue-500 transition">Home</a></li>
+                <li><a href="#skills" class="hover:text-blue-500 transition">Skills</a></li>
+                <li><a href="#projects" class="hover:text-blue-500 transition">Project</a></li>
+                <li><a href="#about" class="hover:text-blue-500 transition">About</a></li>
+                <li><a href="#contact" class="hover:text-blue-500 transition">Contact</a></li>
+            </ul>
+        </div>
+    </nav>  
+
+
+    <!-- Hero Section -->
+    <section id="home" class="container  mx-auto mb-[150px] flex flex-col md:flex-row items-center justify-center gap-6 mt-12 px-4 md:px-0">
+        <div class="mt-[100px] w-full md:w-1/2 flex justify-center relative">
+            <!-- Gambar dengan Efek Hover -->
+            <img class="max-w-sm rounded-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl z-10" src="babayz.png" alt="Hero Image">
+            
+            <!-- Elemen Dekoratif -->
+            <div class="absolute -top-8 -left-8 w-16 h-16 bg-blue-500 rounded-full blur-xl opacity-50 animate-pulse"></div>
+            <div class="absolute -bottom-10 -right-8 w-24 h-24 bg-yellow-500 rounded-full blur-lg opacity-40"></div>
+            <div class="absolute top-8 right-16 w-12 h-12 bg-green-500 rounded-full blur-md opacity-60"></div>
+        
+            <!-- Keterangan pada Gambar -->
+            <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 hover:bg-opacity-40 rounded-lg transition duration-500">
+                <p class="text-white text-sm md:text-lg font-semibold opacity-0 hover:opacity-100 transition duration-500">
+                    Creating Modern and Functional Websites
+                </p>
+            </div>
+        </div>
+
+        <!-- Teks Hero -->
+        <div class="w-full md:w-1/2 mt-8 md:mt-0 text-center md:text-left">
+            <h1 class="text-4xl font-bold text-gray-800">Hi, I’m Fajar!</h1>
+            <p class="mt-4 text-gray-600 text-lg leading-relaxed">
+                I’m a junior web developer passionate about creating simple yet functional websites. 
+                With experience in <span class="font-bold text-blue-500">PHP</span>, 
+                <span class="font-bold text-yellow-500">JavaScript</span>, 
+                <span class="font-bold text-teal-500">Tailwind CSS</span>, 
+                and <span class="font-bold text-purple-500">Bootstrap</span>, 
+                I bring ideas to life with clean code and modern design.
+            </p>
+            <a href="#contact" class="inline-block mt-6 px-6 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600">
+                Let’s Work Together
+            </a>
+        </div>
+    </section>
+    <!-- End of Hero -->
+
+    <!-- Skill Section -->
+    <section id="skills" class="container-fluid pb-[100px] bg-white">
+        <div class="container mx-auto px-4 py-12">
+            <h2 class="text-3xl mt-6 font-bold text-center mb-8 text-gray-800">Skills</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Skill Card - JavaScript -->
+                <div class="flex flex-col items-center bg-gray-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105"
+                    data-aos="fade-up" data-aos-duration="1000">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" class="w-16 h-16 mb-4" />
+                    <h3 class="text-lg font-semibold text-gray-800">JavaScript</h3>
+                </div>
+                <!-- Skill Card - PHP -->
+                <div class="flex flex-col items-center bg-gray-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105"
+                    data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" class="w-16 h-16 mb-4" />
+                    <h3 class="text-lg font-semibold text-gray-800">PHP</h3>
+                </div>
+                <!-- Skill Card - MySQL -->
+                <div class="flex flex-col items-center bg-gray-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105"
+                    data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" class="w-16 h-16 mb-4" />
+                    <h3 class="text-lg font-semibold text-gray-800">MySQL</h3>
+                </div>
+                <!-- Skill Card - Laravel -->
+                <div class="flex flex-col items-center bg-gray-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105"
+                    data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" class="w-16 h-16 mb-4" />
+                    <h3 class="text-lg font-semibold text-gray-800">Laravel</h3>
+                </div>
+                <!-- Skill Card - Tailwind CSS -->
+                <div class="flex flex-col items-center bg-gray-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105"
+                    data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" class="w-16 h-16 mb-4" />
+                    <h3 class="text-lg font-semibold text-gray-800">Tailwind CSS</h3>
+                </div>
+                <!-- Skill Card - Bootstrap -->
+                <div class="flex flex-col items-center bg-gray-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105"
+                    data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" class="w-16 h-16 mb-4" />
+                    <h3 class="text-lg font-semibold text-gray-800">Bootstrap</h3>
+                </div>
+                <!-- Skill Card - Python -->
+                <div class="flex flex-col items-center bg-gray-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105"
+                    data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" class="w-16 h-16 mb-4" />
+                    <h3 class="text-lg font-semibold text-gray-800">Python</h3>
+                </div>
+                <!-- Skill Card - Java -->
+                <div class="flex flex-col items-center bg-gray-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105"
+                    data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg" class="w-16 h-16 mb-4" />
+                    <h3 class="text-lg font-semibold text-gray-800">Java</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Skill Section End -->
+
+    <div id="about" class="mb-4"></div>
+
+ <!-- About Me Section -->
+<section class="container mx-auto px-4 py-16 mb-[100px]" data-aos="fade-up">
+    <h2 class="text-4xl font-bold text-center mb-12 text-gray-800" data-aos="fade-down">About Me</h2>
+    <div class="flex flex-col md:flex-row items-center justify-between gap-16">
+        <!-- Text Content -->
+        <div class="w-full md:w-1/2 text-center md:text-left" data-aos="fade-right" data-aos-delay="200">
+            <div class="bg-white p-8 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+                <h3 class="text-3xl font-semibold text-gray-800 mb-6">Hi, I'm Fajar!</h3>
+                <p class="text-lg text-gray-600 mb-6">
+                    I am a passionate junior web developer who loves creating clean, modern, and functional websites. I specialize in 
+                    <span class="font-bold text-blue-500">HTML</span>, 
+                    <span class="font-bold text-yellow-500">CSS</span>, 
+                    <span class="font-bold text-teal-500">JavaScript</span>, 
+                    and <span class="font-bold text-purple-500">PHP</span>.
+                </p>
+                <p class="text-lg text-gray-600 mb-6">
+                    My goal is to build user-friendly, responsive websites that make a difference. I am always eager to learn new technologies 
+                    and collaborate on exciting projects.
+                </p>
+            </div>
+        </div>
+
+        <!-- Image -->
+        <div class="w-full md:w-1/3 mt-8 md:mt-0" data-aos="fade-left" data-aos-delay="400">
+            <div class="relative group">
+                <!-- Gambar dengan Border dan Hover Effects -->
+                <img class="w-full md:w-3/4 h-auto rounded-lg shadow-lg transform transition duration-500 group-hover:scale-105 group-hover:rotate-2 group-hover:shadow-2xl" 
+                    src="bayu.jpeg" alt="Profile Image">
+
+                <!-- Ikon atau Teks pada Gambar -->
+                <div class="absolute bottom-4 left-4 text-white font-semibold text-lg opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <span class="bg-gray-800 px-4 py-2 rounded-full ">Web Developer</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End About Me Section -->
+
+    <div id="projects" class="mb-4"></div>
+
+    <!-- Project Section -->
+    <section  class="bg-white" data-aos="fade-up">
+        <div class="container mx-auto px-4 py-12 mb-[100px]">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800 animate__animated animate__fadeInUp mt-6" data-aos="fade-down">My Projects</h2>
+
+            <!-- Projects List -->
+            <div class="space-y-12">
+                <!-- Project 1 (Gambar kiri, teks kanan) -->
+                <div class="flex flex-col md:flex-row items-center justify-between gap-8 hover:scale-105 transition-transform duration-500 ease-in-out" data-aos="fade-right">
+                    <div class="w-full md:w-1/2">
+                        <img src="https://www.w3schools.com/w3images/rocks.jpg" alt="Project Image" class="w-full h-48 object-cover rounded-lg shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+                    </div>
+                    <div class="w-full md:w-1/2 text-center md:text-left">
+                        <h3 class="text-2xl font-semibold text-gray-800 mt-4 md:mt-0">Nature Photography Website</h3>
+                        <p class="text-gray-600 mt-2">A portfolio website that showcases stunning nature photography. It includes galleries, image sliders, and a contact form for photography inquiries.</p>
+                        <button onclick="toggleDetails('project1')" class="mt-4 text-blue-500 hover:underline">Show More</button>
+                        <div id="project1" class="mt-4 hidden">
+                            <p class="text-gray-600">Built using HTML, CSS, and JavaScript, the site features a clean layout with responsive design for different devices. The project also includes a backend built with PHP to manage contact form submissions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 (Gambar kanan, teks kiri) -->
+                <div class="flex flex-col md:flex-row-reverse items-center justify-between gap-8 hover:scale-105 transition-transform duration-500 ease-in-out" data-aos="fade-left">
+                    <div class="w-full md:w-1/2">
+                        <img src="https://www.w3schools.com/w3images/photographer.jpg" alt="Project Image" class="w-full h-48 object-cover rounded-lg shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+                    </div>
+                    <div class="w-full md:w-1/2 text-center md:text-left">
+                        <h3 class="text-2xl font-semibold text-gray-800 mt-4 md:mt-0">E-commerce Website</h3>
+                        <p class="text-gray-600 mt-2">An e-commerce website for selling photography prints and digital downloads. Features include a shopping cart, product filtering, and secure checkout process.</p>
+                        <button onclick="toggleDetails('project2')" class="mt-4 text-blue-500 hover:underline">Show More</button>
+                        <div id="project2" class="mt-4 hidden">
+                            <p class="text-gray-600">This project was built using React and Node.js for the frontend, while the backend is powered by Express and MongoDB. It features a user-friendly interface, making shopping smooth and simple.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 (Gambar kiri, teks kanan) -->
+                <div class="flex flex-col md:flex-row items-center justify-between gap-8 hover:scale-105 transition-transform duration-500 ease-in-out" data-aos="fade-up">
+                    <div class="w-full md:w-1/2">
+                        <img src="https://www.w3schools.com/w3images/fjords.jpg" alt="Project Image" class="w-full h-48 object-cover rounded-lg shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+                    </div>
+                    <div class="w-full md:w-1/2 text-center md:text-left">
+                        <h3 class="text-2xl font-semibold text-gray-800 mt-4 md:mt-0">Travel Blog</h3>
+                        <p class="text-gray-600 mt-2">A personal travel blog where users can explore the author's adventures, read blog posts, and view photo galleries of scenic locations.</p>
+                        <button onclick="toggleDetails('project3')" class="mt-4 text-blue-500 hover:underline">Show More</button>
+                        <div id="project3" class="mt-4 hidden">
+                            <p class="text-gray-600">Developed using WordPress, this blog allows users to browse different travel destinations and interact with the content. It includes integrated social media sharing options and comment sections for user engagement.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="contact"  class="mb-4"></div>
+
+ <!-- Contact Section -->
+<section class="bg-gray-100 py-12" data-aos="fade-up">
+    <div class="container mx-auto px-4 mt-[50px]">
+        <h2 class="text-4xl font-bold text-center mb-8 text-gray-800 animate__animated animate__fadeInUp" data-aos="fade-down">Contact Me</h2>
+
+        <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg" data-aos="fade-left">
+            <!-- Contact Form -->
+            <form id="contact-form" autocomplete="off">
+                <div class="mb-6">
+                    <label for="name" class="block text-gray-700 font-semibold mb-2">Name</label>
+                    <input required type="text" id="name" name="name" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your Name" required>
+                </div>
+
+                <div class="mb-6">
+                    <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+                    <input required type="email" id="email" name="email" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your Email" required>
+                </div>
+
+                <div class="mb-6">
+                    <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
+                    <textarea required id="message" name="message" rows="6" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your Message" required></textarea>
+                </div>
+
+                <div class="mb-6">
+                    <button type="submit" class="w-full bg-blue-500 text-white font-semibold py-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        Send Message
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Add EmailJS CDN -->
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <!-- Logo / Name -->
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-2xl font-bold">Debay</h3>
+                </div>
+
+                <!-- Social Media Links -->
+                <div class="flex space-x-6">
+                    <a href="https://facebook.com" class="text-gray-400 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-facebook-f"></i> Facebook
+                    </a>
+                    <a href="https://twitter.com" class="text-gray-400 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-twitter"></i> Twitter
+                    </a>
+                    <a href="https://instagram.com" class="text-gray-400 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                    <a href="https://linkend.com" class="text-gray-400 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-linkedin-in"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="mt-8 text-center">
+                <p class="text-gray-400">Sumedang, Jawa Barat, Indonesia</p>
+                <p class="text-gray-400">Email: bayuf140908@gmail.com</p>
+                <p class="text-gray-400">Phone: +6289510659363</p>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="mt-12 text-center">
+                <p class="text-gray-400">&copy; 2024 Fajar Bayu Saputra. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- JavaScript for Show More/Hide Details -->
+    <script>
+        // Function to toggle the visibility of project details
+    function toggleDetails(projectId) {
+        const details = document.getElementById(projectId);
+        
+        // Toggle the visibility of the clicked project details
+        if (details.classList.contains('hidden')) {
+            // Show the clicked project's details
+            details.classList.remove('hidden');
+        } else {
+            // Hide the clicked project's details
+            details.classList.add('hidden');
+        }
+    }
+
+    // Contoh sederhana untuk menangani pengiriman form
+    document.querySelector('form').addEventListener('submit', function (e) {
+        e.preventDefault(); // Mencegah form dikirim secara default
+
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        const name = document.getElementById('name').value;
+
+        // Menampilkan pesan sukses (contoh pengiriman form)
+        alert(`Thank you, ${name}! Your message has been sent.`);
+        
+        // Reset form setelah pengiriman
+        this.reset();
+    });   const name = document.getElementById('name').value;
+    
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburgerBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <!-- Add EmailJS Script -->
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("CkJDvKZEyFRrBK5L_");  // Replace with your EmailJS User ID
+        })();
+
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Get form values
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var message = document.getElementById("message").value;
+
+            // Send email using EmailJS
+            emailjs.send('service_5jv7lja', 'template_ip3mang', {
+                from_name: name,
+                from_email: email,
+                message: message
+            }).then(function(response) {
+                console.log("Success", response);
+                alert("Your message has been sent successfully!");
+            }).catch(function(error) {
+                console.log("Error", error);
+                alert("Something went wrong. Please try again.");
+            });
+        });
+    </script>
+
+
+</body>
+</html>
